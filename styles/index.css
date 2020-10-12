@@ -1,0 +1,11 @@
+@tailwind base;
+
+/* estilos base (aplicados a los elementos) */
+
+@tailwind components;
+
+/* aquí van nuestras clases de componentes*/
+
+@tailwind utilities;
+
+/* nuestras utilidades extra */

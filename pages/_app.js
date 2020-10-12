@@ -1,7 +1,16 @@
-import '../styles/globals.css'
+import "../styles/index.css";
+import firebase, { FirebaseContext } from "../firebase";
+import useAutentication from "../hooks/useAutentication";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const MyApp = (props) => {
+  const usuario = useAutentication();
+  const { Component, pageProps } = props;
 
-export default MyApp
+  return (
+    <FirebaseContext.Provider value={{ firebase, usuario }}>
+      <Component {...pageProps} />
+    </FirebaseContext.Provider>
+  );
+};
+
+export default MyApp;
